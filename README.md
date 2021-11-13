@@ -13,7 +13,7 @@ Implantar un sistema web que le permita a la concesionaria controlar de manera e
 ## Propuesta de diseño del diseño de la arquitectura del entorno de desarrollo:
 
 <p align="center">
-  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/main/Media/AED.png" />
+  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/gh-pages/Media/AED.png" />
 </p>
 
 ---
@@ -21,7 +21,7 @@ Implantar un sistema web que le permita a la concesionaria controlar de manera e
 ## propuesta del diseño de colecciones para base de datos NoSQL:
 
 <p align="center">
-  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/main/Media/Colecciones.png" />
+  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/gh-pages/Media/ColeccionDB.png" />
 </p>
 
 ---
@@ -29,7 +29,7 @@ Implantar un sistema web que le permita a la concesionaria controlar de manera e
 ## <p align=center>Prototipo de interfaz:
 
 <p align="center">
-  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/main/Media/Home_page.png" />
+  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/gh-pages/Media/home.png" />
 </p>
 
 ---
@@ -56,7 +56,7 @@ MisiónTic2022 - Ciclo - 4**
 ---
 
 <p align="center">
-  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/main/Media/Logo.png" />
+  <img src="https://github.com/StivenAtis/YourIdealCar.web-Frontend/blob/gh-pages/Media/Logo.png" />
 </p>
 
 ---
