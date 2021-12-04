@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -7,6 +8,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  fbValidator:FormGroup=this.fb.group({
+    "usuario": ["", [Validators.required, Validators.email]],
+    "clave": ["", [Validators.required]]
+  });
 
   title = 'dinamic-styles';
   cssUrl: string;
@@ -19,7 +25,9 @@ export class LoginComponent implements OnInit {
   cssUrl8: string;
   cssUrl9: string;
 
-  constructor(public sanitizer: DomSanitizer) { 
+  constructor(private fb: FormBuilder, public sanitizer: DomSanitizer) { 
+
+    
     this.cssUrl = `/assets/parallax/jarallax.css`;
     this.cssUrl2 = `/assets/dropdown/css/style.css`;
     this.cssUrl3 = `/assets/socicon/css/styles.css`;

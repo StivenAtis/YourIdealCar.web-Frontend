@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-error',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  title = 'dinamic-styles';
+  cssUrl: string;
+
+  constructor(public sanitizer: DomSanitizer) {
+    this.cssUrl = `/assets/Error/style.css`;
+   }
 
   ngOnInit(): void {
   }

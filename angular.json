@@ -34,9 +34,8 @@
 
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/assets/vimeoplayer/player.js",
-              "src/assets/theme/js/script.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              
             ]
           },
           "configurations": {
