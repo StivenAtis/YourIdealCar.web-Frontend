@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
+import { ModelIdentify } from 'src/app/models/identify.model';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,6 +10,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
+
+  seInicioSesion: boolean = false;
+
+  subs: Subscription = new Subscription();
 
   title = 'dinamic-styles';
   cssUrl: string;
@@ -19,7 +26,7 @@ export class NavigationBarComponent implements OnInit {
   cssUrl8: string;
   cssUrl9: string;
 
-  constructor(public sanitizer: DomSanitizer) {
+  constructor(private seguridadServicio: SecurityService, public sanitizer: DomSanitizer) {
     this.cssUrl = `/assets/parallax/jarallax.css`;
     this.cssUrl2 = `/assets/dropdown/css/style.css`;
     this.cssUrl3 = `/assets/socicon/css/styles.css`;
@@ -32,6 +39,9 @@ export class NavigationBarComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.subs = this.seguridadServicio.obtenerDatosUsuarioEnSesion().subscribe((datos: ModelIdentify) => {
+      this.seInicioSesion = datos.EstaIdentificado;
+    })
   }
 
 }

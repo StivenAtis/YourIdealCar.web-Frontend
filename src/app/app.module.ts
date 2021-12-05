@@ -7,6 +7,7 @@ import { NavigationBarComponent } from './template/navigation-bar/navigation-bar
 import { PageFooterComponent } from './template/page-footer/page-footer.component';
 import { HomeComponent } from './template/home/home.component';
 import { ErrorComponent } from './template/error/error.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,10 +16,12 @@ import { ErrorComponent } from './template/error/error.component';
     PageFooterComponent,
     HomeComponent,
     ErrorComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

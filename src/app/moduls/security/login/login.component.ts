@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SecurityService } from 'src/app/services/security.service';
+import * as cryptoJS from "crypto-js";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class LoginComponent implements OnInit {
 
-  fbValidator:FormGroup=this.fb.group({
+  fgValidator:FormGroup=this.fb.group({
     "usuario": ["", [Validators.required, Validators.email]],
     "clave": ["", [Validators.required]]
   });
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
   cssUrl8: string;
   cssUrl9: string;
 
-  constructor(private fb: FormBuilder, public sanitizer: DomSanitizer) { 
+  constructor(public sanitizer: DomSanitizer, private fb: FormBuilder, private servicioSeguridad:SecurityService, private router: Router) { 
 
     
     this.cssUrl = `/assets/parallax/jarallax.css`;
@@ -40,6 +43,24 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  IdentificarUsuario(){
+    let usuario=this.fgValidator.controls["usuario"].value;
+    let clave=this.fgValidator.controls["clave"].value;
+    let claveCifrada=cryptoJS.MD5(clave).toString();
+
+    //alert(claveCifrada)
+
+    this.servicioSeguridad.Identificar(usuario,claveCifrada).subscribe((datos:any)=>{
+      //alert("Datos validos")
+      this.servicioSeguridad.AlmacenarSesion(datos);
+      this.router.navigate(['/home'])
+    },(error:any)=>{
+      alert("Error: " + error.error.error.message)
+      console.error('An error occurred:', error.error);
+    })
+
   }
 
 }
