@@ -14,6 +14,7 @@ import { CreateVehiclesComponent } from './vehicles/create-vehicles/create-vehic
 import { EditVehiclesComponent } from './vehicles/edit-vehicles/edit-vehicles.component';
 import { DeleteVehiclesComponent } from './vehicles/delete-vehicles/delete-vehicles.component';
 import { SearchVehiclesComponent } from './vehicles/search-vehicles/search-vehicles.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { SearchVehiclesComponent } from './vehicles/search-vehicles/search-vehic
   ],
   imports: [
     CommonModule,
-    AdministrationRoutingModule
+    AdministrationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministrationModule { }

@@ -1,1 +1,70 @@
-<p>search-vehicles works!</p>
+<section data-bs-version="5.1" class="form6 cid-sPYmooZoUHxZ" id="form6-1d">
+    <!-- <a routerLink="/administration/create-vehicles" button class="btn btn-outline-success">Nuevo vehiculo</a> -->
+    <div class="form-group">
+        <div class="col-md-9">
+            <button routerLink="/administration/create-vehicles" id="singlebutton"
+                name="singlebutton" class="btn btn-primary">Nuevo vehiculo</button>
+        </div>
+    </div>
+
+    <table class="table" responsive>
+        <thead>
+            <tr>
+                <th>
+                    Marca
+                </th>
+                <th>
+                    Referencia
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Editar
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listadoRegistros">
+                <td>
+                    {{p.marca}}
+                </td>
+                <td>
+                    {{p.referencia}}
+                </td>
+                <td>
+                    {{p.modelo}}
+                </td>
+                <td>
+                    {{p.valor}}
+                </td>
+                <td>
+                    {{p.fecha}}
+                </td>
+                <td>
+                    {{p.estado}}
+                </td>
+                <td>
+                    <!--<a routerLink="/administration/edit-vehicles/{{p.id_vehiculo}}" button
+                        class="btn btn-outline-success">Editar vehiculo</a>-->
+
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button routerLink="/administration/edit-vehicles/{{p.id_vehiculo}}" id="singlebutton"
+                                name="singlebutton" class="btn btn-primary">Editar vehiculo</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

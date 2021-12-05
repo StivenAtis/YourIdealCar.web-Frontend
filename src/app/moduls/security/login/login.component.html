@@ -22,6 +22,17 @@
                     <div class="form-outline mb-4">
                       <input formControlName="clave" type="password" id="form2Example22" class="form-control" placeholder="Password"/>
                     </div>
+
+                    <div class="form-group">
+                      <div class="form-outline mb-4">
+                        <select id="selectbasic" name="selectbasic" class="form-control" required>
+                          <option selected disabled value="">Tipo de usuario</option>
+                          <option value="1">Administrador</option>
+                          <option value="2">Asesor</option>
+                          <option value="2">Cliente</option>
+                        </select>
+                      </div>
+                    </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button [disabled]="!fgValidator.valid"  class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" (click)="IdentificarUsuario()">Log in</button>
