@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SessionValidatorGuard } from 'src/app/guardians/session-validator.guard';
 import { SearchAdvisorsComponent } from './advisors/search-advisors/search-advisors.component';
 import { CreateCustomersComponent } from './customers/create-customers/create-customers.component';
 import { EditCustomersComponent } from './customers/edit-customers/edit-customers.component';
@@ -16,31 +17,38 @@ const routes: Routes = [
   },  
   {
     path: "edit-customers",
-    component: EditCustomersComponent
+    component: EditCustomersComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "search-vehicles",
-    component: SearchVehiclesComponent
+    component: SearchVehiclesComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "create-vehicles",
-    component: CreateVehiclesComponent
+    component: CreateVehiclesComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "edit-vehicles/:id",
-    component: EditVehiclesComponent
+    component: EditVehiclesComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "delete-vehicles/:id",
-    component: DeleteVehiclesComponent
+    component: DeleteVehiclesComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "search-advisors",
-    component: SearchAdvisorsComponent
+    component: SearchAdvisorsComponent,
+    canActivate: [SessionValidatorGuard]
   },
   {
     path: "search-customers",
-    component: SearchCustomersComponent
+    component: SearchCustomersComponent,
+    canActivate: [SessionValidatorGuard]
   }
 ];
 

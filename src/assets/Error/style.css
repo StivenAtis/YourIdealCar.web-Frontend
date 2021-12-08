@@ -34,7 +34,7 @@ body {
 
 .layer:after {
   font: 150px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
-  content: '404  :( \A   Page not\A Found';
+  content: '404  :( \A   Pagina no\A Encontrada';
   white-space: pre;
   text-align: center;
   height: 100%;
