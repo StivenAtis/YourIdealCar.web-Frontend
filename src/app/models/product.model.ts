@@ -1,11 +1,13 @@
 export class ModelProduct{
-    id_vehiculo?: string;
+    id?: string;
     marca?: string;
     referencia?: string;
     modelo?: Number;
     valor?: Number;
     fecha?: Date;
-    estado?: boolean;
+    estado?: string;
+    imagen?: string;
+    solicitudId?: string;
     tipoVehiculoId?: string;
     departamentoId?: string;
     ciudadId?: string;

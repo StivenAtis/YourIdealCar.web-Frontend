@@ -29,7 +29,13 @@
                     Estado
                 </th>
                 <th>
+                    Imagen
+                </th>
+                <th>
                     Editar
+                </th>
+                <th>
+                    Eliminar
                 </th>
             </tr>
         </thead>
@@ -54,13 +60,24 @@
                     {{p.estado}}
                 </td>
                 <td>
+                    <img src="{{p.imagen}}" class="imagenProducto"/>
+                </td>
+                <td>
                     <!--<a routerLink="/administration/edit-vehicles/{{p.id_vehiculo}}" button
                         class="btn btn-outline-success">Editar vehiculo</a>-->
 
                     <div class="form-group">
                         <div class="col-md-9">
-                            <button routerLink="/administration/edit-vehicles/{{p.id_vehiculo}}" id="singlebutton"
+                            <button routerLink="/administration/edit-vehicles/{{p.id}}" id="singlebutton"
                                 name="singlebutton" class="btn btn-primary">Editar vehiculo</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button routerLink="/administration/delete-vehicles/{{p.id}}" id="singlebutton"
+                                name="singlebutton" class="btn btn-primary">Eliminar vehiculo</button>
                         </div>
                     </div>
                 </td>

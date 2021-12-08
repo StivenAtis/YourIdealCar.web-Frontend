@@ -12,6 +12,10 @@
                 <form [formGroup]="fgValidator" (ngSubmit)="guardarVehiculo()" action="" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
 
                     <div class="dragArea row">
+                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="name">
+                            <input formControlName="id_vehiculo" type="text" name="id_vehiculo" placeholder="id_vehiculo" data-form-field="id_vehiculo"
+                                class="form-control" required="" value="" id="name-form6-1c"> 
+                        </div> -->
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="name">
                             <input formControlName="marca" type="text" name="marca" placeholder="Marca" data-form-field="marca"
                                 class="form-control" required="" value="" id="name-form6-1c">
@@ -29,21 +33,31 @@
                                 value="" id="age-form6-1c">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
-                            <input formControlName="fecha" type="datetime" name="date" placeholder="Fecha" data-form-field="date"
-                                class="form-control" required="" value="" id="phone-form6-1c">
+                            <input formControlName="fecha" type="datetime-local" name="date" placeholder="Fecha" data-form-field="date"
+                                class="form-control" required="" value="" >
                         </div>
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
+                            <input formControlName="solicitudId" type="solicitudId" name="solicitudId" placeholder="Num. solicitud" data-form-field="solicitudId"
+                                class="form-control" required="" value="" >
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
+                            <input formControlName="imagen" type="text" name="imagen" placeholder="Imagen" data-form-field="imagen"
+                                class="form-control" required="" value="" >
+                        </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                             <select formControlName="estado" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Estado vehiculo</option>
-                                <option value="true" >Disponible</option>
-                                <option value="false">No disponible</option>
+                                <option >Disponible</option>
+                                <option >No disponible</option>
                             </select>
                             <div class="invalid-feedback">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="tipoVehiculoId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Tipo vehiculo</option>
                                 <option value="Auto" >Auto liviano</option>
                                 <option value="Camion">Camión</option>
@@ -53,7 +67,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="departamentoId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Departamento</option>
                                 <option value="1" >1</option>
                                 <option value="2">2</option>
@@ -63,7 +77,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="ciudadId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Ciudad</option>
                                 <option value="1" >1</option>
                                 <option value="2">2</option>
@@ -71,7 +85,9 @@
                             </select>
                             <div class="invalid-feedback">
                             </div>
-                        </div>
+                        </div> 
+
+
                         <div class="col-auto mbr-section-btn align-center">
                             <button [disabled]="!fgValidator.valid" type="submit"
                                 class="btn btn-primary display-4">Registrar vehiculo

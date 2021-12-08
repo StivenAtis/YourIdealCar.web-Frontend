@@ -9,9 +9,10 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form [formGroup]="fgValidator" (ngSubmit)="editarVehiculo()" action="" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
+                <form [formGroup]="fgValidator" (ngSubmit)="editarVehiculo()" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
                     
                     <input type="hidden" formControlName="id"/>
+                    
 
                     <div class="dragArea row">
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="name">
@@ -31,21 +32,31 @@
                                 value="" id="age-form6-1c">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
-                            <input formControlName="fecha" type="datetime" name="date" placeholder="Fecha" data-form-field="date"
+                            <input formControlName="fecha" type="datetime-local" name="date" placeholder="Fecha" data-form-field="date"
                                 class="form-control" required="" value="" id="phone-form6-1c">
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
+                            <input formControlName="solicitudId" type="solicitudId" name="solicitudId" placeholder="Num. solicitud" data-form-field="solicitudId"
+                                class="form-control" required="" value="" >
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="date">
+                            <input formControlName="imagen" type="imagen" name="imagen" placeholder="Imagen" data-form-field="imagen"
+                                class="form-control" required="" value="" >
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                             <select formControlName="estado" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Estado vehiculo</option>
-                                <option value="true" >Disponible</option>
-                                <option value="false">No disponible</option>
+                                <option  >Disponible</option>
+                                <option >No disponible</option>
                             </select>
                             <div class="invalid-feedback">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="tipoVehiculoId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Tipo vehiculo</option>
                                 <option value="Auto" >Auto liviano</option>
                                 <option value="Camion">Camión</option>
@@ -55,7 +66,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="departamentoId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Departamento</option>
                                 <option value="1" >1</option>
                                 <option value="2">2</option>
@@ -65,7 +76,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <select class="form-select" id="ddlgenero" required>
+                            <select formControlName="ciudadId" class="form-select" id="ddlgenero" required>
                                 <option selected disabled value="">Ciudad</option>
                                 <option value="1" >1</option>
                                 <option value="2">2</option>
@@ -76,8 +87,12 @@
                         </div>
                         <div class="col-auto mbr-section-btn align-center">
                             <button type="submit"
-                                class="btn btn-primary display-4">Registrar vehiculo
+                                class="btn btn-primary display-4">Actualizar vehiculo
                             </button>
+                            
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
+                            <a class="btn btn-primary display-4" routerLink="/administration/search-vehicles">Atrás</a>
                         </div>
                     </div>
                 </form>

@@ -34,7 +34,7 @@ export class ProductService {
   }
 
   ActualizarProducto(producto: ModelProduct): Observable<ModelProduct> {
-    return this.http.put<ModelProduct>(`${this.url}/vehiculos/${producto.id_vehiculo}`, producto, {
+    return this.http.put<ModelProduct>(`${this.url}/vehiculos/${producto.id}`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
@@ -42,7 +42,7 @@ export class ProductService {
   }
 
   EliminarProducto(id: string): Observable<any> {
-    return this.http.delete(`${this.url}/vehiculos/${id}`, {
+    return this.http.delete<any>(`${this.url}/vehiculos/${id}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
