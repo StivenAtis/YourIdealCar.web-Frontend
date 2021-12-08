@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModelCustomer } from 'src/app/models/customers.model';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-search-customers',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCustomersComponent implements OnInit {
 
-  constructor() { }
+  listadoRegistros: ModelCustomer[] = [];
+
+  constructor(private ClienteServicio: CustomerService) { }
 
   ngOnInit(): void {
+    this.ObtenerCliente();
+  }
+
+  ObtenerCliente(){
+    this.ClienteServicio.ObtenerRegistros().subscribe((datos: ModelCustomer[]) => {
+      this.listadoRegistros = datos;
+    })
   }
 
 }

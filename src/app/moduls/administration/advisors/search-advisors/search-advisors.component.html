@@ -1,1 +1,84 @@
-<p>search-advisors works!</p>
+<section data-bs-version="5.1" class="form6 cid-sPYmooZoUHxZ" id="form6-1d">
+
+    <table class="table" responsive>
+        <thead>
+            <tr>
+                <th>
+                    identificación
+                </th>
+                <th>
+                    Nombres
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Edad
+                </th>
+                <th>
+                    Genero
+                </th>
+                <th>
+                    Telefono
+                </th>
+                <th>
+                    Dirección
+                </th>
+                <th>
+                    Email
+                </th>
+                <!--<th>
+                    Editar
+                </th>
+                <th>
+                    Eliminar
+                </th>-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listadoRegistros">
+                <td>
+                    {{p.id_asesor}}
+                </td>
+                <td>
+                    {{p.nombres}}
+                </td>
+                <td>
+                    {{p.apellidos}}
+                </td>
+                <td>
+                    {{p.edad}}
+                </td>
+                <td>
+                    {{p.genero}}
+                </td>
+                <td>
+                    {{p.telefono}}
+                </td>
+                <td>
+                    {{p.direccion}}
+                </td>
+                <td>
+                    {{p.email}}
+                </td>
+                <!--<td>
+                    
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button routerLink="/administration/edit-vehicles/{{p.id}}" id="singlebutton"
+                                name="singlebutton" class="btn btn-primary">Editar cuenta</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button routerLink="/administration/delete-vehicles/{{p.id}}" id="singlebutton"
+                                name="singlebutton" class="btn btn-primary">Eliminar cuenta</button>
+                        </div>
+                    </div>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+</section>

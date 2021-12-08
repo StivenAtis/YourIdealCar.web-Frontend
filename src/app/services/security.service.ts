@@ -32,7 +32,7 @@ export class SecurityService {
   }
 
   Identificar(usuario: string, clave: string): Observable<ModelIdentify> {
-    return this.http.post<ModelIdentify>(`${this.url}/autenticarCliente`, {
+    return this.http.post<ModelIdentify>(`${this.url}/autenticarAdministrador`, {
       usuario: usuario,
       contrasenia: clave
     })

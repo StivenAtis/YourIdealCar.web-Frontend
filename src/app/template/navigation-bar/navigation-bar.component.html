@@ -101,6 +101,19 @@
                         <a class="nav-link link text-black text-primary display-4"
                             routerLink="/contact/contact">Contacto</a>
                     </li>
+
+                    <li *ngIf="seInicioSesion" class="nav-item dropdown">
+                        <a class="nav-link link text-black text-primary dropdown-toggle display-4" href="#"
+                            data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                            aria-expanded="false">Usuarios</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-undefined">
+                            <a class="text-black text-primary show dropdown-item display-4"
+                            routerLink="/administration/search-advisors">Asesores</a>
+                            <a class="text-black text-primary dropdown-item display-4"
+                            routerLink="/administration/search-customers">Clientes<br></a>
+                        </div>
+                    </li>
+
                     <li *ngIf="!seInicioSesion" class="nav-item">
                         <a class="nav-link link text-black text-primary display-4"
                             routerLink="/administration/create-customers">Registro<br></a>
