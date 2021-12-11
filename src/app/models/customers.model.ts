@@ -10,6 +10,6 @@ export class ModelCustomer{
     email?: string;
     imagen?: string;
     contrasenia?: string;
-    estado?: string;
+    estado?: boolean;
     tipoDocumentoId?: string;
 }

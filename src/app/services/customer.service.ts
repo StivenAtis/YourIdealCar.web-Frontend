@@ -25,7 +25,7 @@ export class CustomerService {
     return this.http.get<ModelCustomer>(`${this.url}/clientes/${id}`)
   }
 
-  CrearAsesor(cliente: ModelCustomer): Observable<ModelCustomer> {
+  CrearCliente(cliente: ModelCustomer): Observable<ModelCustomer> {
     return this.http.post<ModelCustomer>(`${this.url}/clientes`, cliente, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
@@ -33,7 +33,7 @@ export class CustomerService {
     })
   }
 
-  ActualizarAsesor(cliente: ModelCustomer): Observable<ModelCustomer> {
+  ActualizarCliente(cliente: ModelCustomer): Observable<ModelCustomer> {
     return this.http.put<ModelCustomer>(`${this.url}/clientes/${cliente.id}`, cliente, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
@@ -41,12 +41,11 @@ export class CustomerService {
     })
   }
 
-  EliminarAsesor(id: string): Observable<any> {
+  EliminarCliente(id: string): Observable<any> {
     return this.http.delete<any>(`${this.url}/clientes/${id}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     })
-  }
-  
+  }  
 }
